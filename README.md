@@ -16,6 +16,16 @@
 
 本项目不修改、复制或提交任何上游仓库代码。适配器通过命令行或稳定协议调用外部项目，并把原始结果转换成统一数据格式。
 
+### 外部 Provider
+
+| 项目 | 上游仓库 | 计划用途 | 当前状态 |
+| --- | --- | --- | --- |
+| MediaCrawler | [NanmiCoder/MediaCrawler](https://github.com/NanmiCoder/MediaCrawler) | 小红书笔记、评论采集 | 已接入 |
+| Spider_XHS | [cv-cat/Spider_XHS](https://github.com/cv-cat/Spider_XHS) | 备用采集或发布 Provider | 尚未接入 |
+| xiaohongshu-mcp | [xpzouying/xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) | 发布笔记、发评论、回复评论 | 尚未接入 |
+
+以上项目均为独立的第三方仓库，其版权、许可证和使用要求以各自上游仓库为准；本项目的许可证不覆盖这些外部 Provider。
+
 ## 架构
 
 ```text
@@ -44,7 +54,7 @@ Provider 配置位于 `config/providers.yaml`。其中的相对路径统一相�
 
 ## MediaCrawler 采集
 
-MediaCrawler 需要先在它自己的仓库中安装依赖并完成小红书登录。健康检查通过后，可以运行：
+[MediaCrawler](https://github.com/NanmiCoder/MediaCrawler) 需要先在它自己的仓库中安装依赖并完成小红书登录。健康检查通过后，可以运行：
 
 ```bash
 .venv/bin/demand-radar collect \
