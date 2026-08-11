@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xhs-demand-radar"
+version = "0.1.0"
+description = "可插拔的小红书需求采集、分析与发布基础设施"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "PyYAML>=6.0,<7",
+  "uv>=0.5",
+]
+
+[project.scripts]
+demand-radar = "demand_radar.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,32 @@
+version: 1
+project_root: ..
+
+collectors:
+  mediacrawler:
+    adapter: mediacrawler
+    enabled: true
+    home: ../MediaCrawler
+    command: [uv, run, main.py]
+    login_type: qrcode
+    headless: false
+    max_concurrency: 1
+    timeout_seconds: 3600
+
+  manual_import:
+    adapter: manual_import
+    enabled: true
+
+publishers:
+  xiaohongshu_mcp:
+    adapter: xiaohongshu_mcp
+    enabled: false
+    home: ../xiaohongshu-mcp
+    capabilities:
+      - publish_note
+      - publish_video
+      - post_comment
+      - reply_comment
+
+policy:
+  publishing:
+    require_human_approval: true
